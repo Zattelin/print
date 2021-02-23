@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--  Meta  -->
+  <meta charset="UTF-8">
+  <title>My New Project!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--  Styles  -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <link rel="stylesheet" href="styles/index.processed.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="sevenAC.html">7 AC</a>
+          <a class="nav-link" href="eightAB.html">8 AB</a>
+          <a class="nav-link disabled" href="nineAC.html" tabindex="-1" aria-disabled="true">9 AC</a>
+          <a class="nav-link" href="onehoundredX.html">100-104</a>
+          <a class="nav-link" href="#">102</a>
+          <a class="nav-link" href="#">104</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row" ng-app="notebooks" ng-controller="NotebookListCtrl">
+    <div class="col" class="notebooks">
+      <p>9AC</p>
+      <input type="text" placeholder="Search" id="query" ng-model="queryThree" />
+      <!-- <select ng-model="orderListThree">
+          <option value="job">By job</option>
+          <option value="-printer">Newest</option>
+          <option value="printer">Oldest</option>
+        </select> -->
+      <ul id="notebook_ul">
+        <li ng-repeat="notebook in NineAC | filter:queryThree | orderBy: orderList">
+          <div class="center">Job: {{notebook.job}}</div><br>
+          <div ng-show="notebook.Detail">DET {{notebook.bin1}} is {{notebook.Detail}}</div>
+          <div ng-show="notebook.Summary">SUM {{notebook.bin4}} is {{notebook.Summary}}</div>
+          <div class="">Printers: {{notebook.printer}}</div>
+        </li>
+      </ul>
+      <span>Number of Snapshots: {{notebooks.length}}</span>
+    </div>
+
+  </div>
+  </div>
+
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js'></script>
+  <script src='https://pxtrack.herokuapp.com/embed/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxLCJ0aXRsZSI6ImNvZGVwZW4uaW8gaGl0cyIsImlhdCI6MTQ1ODYwMzAzNX0.iveKvifh0UE3q-1ym6_nvyQ_4cJu_ewGPhrt5eTCicQ/pxtrack.js'></script>
+  <!-- <script src="./script.js"></script> -->
+
+  <script src="scripts/index.js"></script>
+
+</body>
+
+</html>
